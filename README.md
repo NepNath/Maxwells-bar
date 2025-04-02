@@ -16,8 +16,8 @@ Maxwell Bar est une application web qui permet aux utilisateurs de :
 
 ## 🚀 Technologies utilisées
 
-Frontend : HTML, CSS, JavaScript
-Backend : JavaScript (Express)
+- Frontend : HTML, CSS, JavaScript
+- Backend : JavaScript (Express)
 
 ## 📦 Installation
 
