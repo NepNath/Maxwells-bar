@@ -1,12 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accueil</title>
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="shortcut icon" href="assets/images/logo/logo.svg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maxwell's Bar - Les Cocktails</title>
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/home.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
-<h1 class="title"> 
-    Welcome to Maxwell's Bar ! 
-</h1>
+<body>
+  <div class="background-container">
+    <div class="overlay"></div>
+  </div>
+
+  <header>
+    <div class="header-content">
+      <h1 class="logo">MAXWELL'S BAR</h1>
+      <div class="header-buttons">
+        <a href="/login" class="btn btn-outline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          Connexion
+        </a>
+        <button id="menu-button" class="btn btn-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div id="menu-overlay" class="menu-overlay">
+    <div class="menu-content">
+      <button id="close-menu" class="close-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+      <h2 class="menu-title">Menu</h2>
+      
+      <nav class="menu-nav">
+        <div class="menu-section">
+          <div class="menu-item">
+            <div class="menu-bullet"></div>
+            <a href="/">Accueil</a>
+          </div>
+          <div class="menu-item">
+            <div class="menu-bullet"></div>
+            <a href="/account">Profil</a>
+          </div>
+          <div class="menu-item">
+            <div class="menu-bullet"></div>
+            <a href="/cocktails">Liste des cocktails</a>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <h3 class="menu-subtitle">Catégorie cocktails</h3>
+          <div class="menu-item">
+            <div class="menu-bullet"></div>
+            <a href="/search?category=classiques">Classiques</a>
+          </div>
+          <div class="menu-item">
+            <div class="menu-bullet"></div>
+            <a href="/search?category=signature">Signature</a>
+          </div>
+          <div class="menu-item">
+            <div class="menu-bullet"></div>
+            <a href="/search?category=sans-alcool">Sans alcool</a>
+          </div>
+          <div class="menu-item">
+            <div class="menu-bullet"></div>
+            <a href="/search?category=ingredients-principaux">Par ingrédients principaux</a>
+          </div>
+          <div class="menu-item">
+            <div class="menu-bullet"></div>
+            <a href="/search?category=occasions">Par occasions</a>
+          </div>
+        </div>
+
+        <div class="menu-section">
+          <h3 class="menu-subtitle">Services proposés</h3>
+          <div class="menu-item">
+            <div class="menu-bullet"></div>
+            <a href="/create">Cocktail builder</a>
+          </div>
+          <div class="menu-item">
+            <div class="menu-bullet"></div>
+            <a href="/tips">Conseils et astuces</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <main>
+    <div class="hero">
+      <h2 class="hero-title">LES COCKTAILS</h2>
+      <div class="hero-divider"></div>
+      
+      <form id="search-form" class="search-form">
+        <div class="search-container">
+          <input type="text" placeholder="Recherche" class="search-input">
+          <button type="submit" class="search-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <section class="cocktails-section">
+      <h3 class="section-title">Suggestions de cocktails</h3>
+      <div class="cocktail-grid" id="cocktail-suggestions">
+        <!-- Les cocktails seront injectés ici via JavaScript -->
+        <div class="loading">Chargement des cocktails...</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Enjoy !</p>
+  </footer>
+
+  <script src="/js/menu.js"></script>
+  <script src="/js/api-client.js"></script>
+  <script src="/js/home.js"></script>
+</body>
+</html>
