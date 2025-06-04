@@ -1,12 +1,14 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 4000;
 
 // Middleware pour les fichiers statiques
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/html', express.static(path.join(__dirname, 'html')));
 
 // Routes
 app.get('/', (req, res) => {
@@ -14,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'login.html'));
+  res.sendFile(path.join(__dirname, '/html/login.html'));
 });
 
 app.get('/register', (req, res) => {
