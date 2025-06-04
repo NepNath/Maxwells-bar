@@ -1,0 +1,205 @@
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-image: url('/images/cocktail-bg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+header {
+  padding: 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  color: white;
+  font-size: 1.75rem;
+  letter-spacing: 0.05em;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-divider {
+  width: 8rem;
+  height: 2px;
+  background-color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.search-form {
+  width: 100%;
+  max-width: 28rem;
+  margin-bottom: 3rem;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  padding-right: 3rem;
+  border-radius: 9999px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.search-button {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--color-text-light);
+  padding: 0.5rem;
+  border-radius: 9999px;
+}
+
+.search-button:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.cocktails-section {
+  padding: 2rem 1rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cocktail-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+}
+
+.cocktail-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cocktail-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.cocktail-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.cocktail-image {
+  width: 120px;
+  height: 160px;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  transition: transform 0.2s;
+}
+
+.cocktail-card:hover .cocktail-image {
+  transform: scale(1.05);
+}
+
+.cocktail-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.cocktail-description {
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+.cocktail-actions {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.loading {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+}
+
+/* Responsive */
+@media (min-width: 640px) {
+  .cocktail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cocktail-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+  }
+}
